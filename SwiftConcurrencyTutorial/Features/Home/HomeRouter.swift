@@ -33,6 +33,8 @@ func destinationView(for dest: TopicDestination) -> some View {
         MarkdownTopicView(filename: "01-Beginner/1.1-WhatIsSwiftConcurrency")
     case .asyncAwaitBasics:
         AsyncAwaitDemoView()
+    case .asyncLet:
+        AsyncLetDemoView()
     default:
         ComingSoonView(title: "Coming soon")
     }
