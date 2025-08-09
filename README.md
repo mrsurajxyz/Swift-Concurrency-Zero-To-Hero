@@ -39,68 +39,130 @@ This repo is perfect for:
 
 ```
 SwiftConcurrencyTutorial/
-├─ 01-Basics/
-│  ├─ 1.1-AsyncAwaitBasics.swift
-│  ├─ 1.2-AsyncFunctions.swift
-│  └─ 1.3-AsyncLet.swift
+├─ 01-Beginner/
+│ ├─ 1.1-WhatIsSwiftConcurrency.md
+│ ├─ 1.2-AsyncAwaitBasics/
+│ │ ├─ AsyncAwaitBasics.swift // Playground/demo code
+│ │ ├─ AsyncAwaitDemoViewModel.swift // @Observable VM for demo
+│ │ ├─ AsyncAwaitDemoView.swift // SwiftUI demo UI
+│ │ └─ Tests/
+│ ├─ 1.3-AsyncLet/
+│ │ ├─ AsyncLetDemo.swift
+│ │ ├─ AsyncLetDemoViewModel.swift
+│ │ ├─ AsyncLetDemoView.swift
+│ │ └─ Tests/
+│
 ├─ 02-Intermediate/
-│  ├─ 2.1-TaskAndTaskGroups.swift
-│  ├─ 2.2-DetachedTasks.swift
-│  └─ 2.3-TaskCancellation.swift
+│ ├─ 2.1-Task/
+│ │ ├─ TaskDemo.swift
+│ │ ├─ TaskDemoViewModel.swift
+│ │ ├─ TaskDemoView.swift
+│ │ └─ Tests/
+│ ├─ 2.2-TaskGroup/
+│ │ ├─ TaskGroupDemo.swift
+│ │ ├─ TaskGroupDemoViewModel.swift
+│ │ ├─ TaskGroupDemoView.swift
+│ │ └─ Tests/
+│ ├─ 2.3-DetachedTasks/
+│ │ ├─ DetachedTasksDemo.swift
+│ │ ├─ DetachedTasksDemoViewModel.swift
+│ │ ├─ DetachedTasksDemoView.swift
+│ │ └─ Tests/
+│ ├─ 2.4-Cancellation/
+│ ├─ CancellationDemo.swift
+│ ├─ CancellationDemoViewModel.swift
+│ ├─ CancellationDemoView.swift
+│ └─ Tests/
+│
 ├─ 03-Advanced/
-│  ├─ 3.1-Actors.swift
-│  ├─ 3.2-AsyncSequenceStreams.swift
-│  ├─ 3.3-MixingWithCombine.swift
-│  └─ 3.4-PerformanceAndPitfalls.swift
+│ ├─ 3.1-Actors/
+│ │ ├─ ActorsDemo.swift
+│ │ ├─ ActorsDemoViewModel.swift
+│ │ ├─ ActorsDemoView.swift
+│ │ └─ Tests/
+│ ├─ 3.2-AsyncSequences/
+│ │ ├─ AsyncSequencesDemo.swift
+│ │ ├─ AsyncSequencesDemoViewModel.swift
+│ │ ├─ AsyncSequencesDemoView.swift
+│ │ └─ Tests/
+│ ├─ 3.3-MixingWithCombine/
+│ │ ├─ MixingWithCombineDemo.swift
+│ │ ├─ MixingWithCombineDemoViewModel.swift
+│ │ ├─ MixingWithCombineDemoView.swift
+│ │ └─ Tests/
+│ ├─ 3.4-PerformanceAndPitfalls/
+│ ├─ PerformanceDemo.swift
+│ ├─ PerformanceDemoViewModel.swift
+│ ├─ PerformanceDemoView.swift
+│ └─ Tests/
+│
 └─ Shared/
-   ├─ MockData.swift
-   └─ Utilities.swift
+├─ MockData.swift
+└─ Utilities.swift
 ```
-
 
 ---
 
 ## 📚 Learning Path
 
 ### **Beginner**
-1. **What is Swift Concurrency?**
-   - The problem it solves
-   - Differences from GCD & completion handlers
-2. **`async` and `await`**
-   - Suspending functions
-   - Sequential async calls
-3. **`async let`**
-   - Structured parallelism in a single scope
+1. **What is Swift Concurrency?**  
+   - The problem it solves  
+   - Differences from GCD & completion handlers  
+
+2. **`async` and `await`**  
+   - Suspending functions  
+   - Sequential async calls  
+   - Demo: Simple network call (no cancellation yet)  
+
+3. **`async let`**  
+   - Structured parallelism in a single scope  
+   - Demo: Compare sequential vs parallel timing  
 
 ---
 
 ### **Intermediate**
-4. **`Task`**
-   - Running async work in a new context
-   - Main actor vs background
-5. **`TaskGroup`**
-   - Running multiple async tasks in parallel
-   - Collecting results
-6. **Detached Tasks**
-   - When to use (and when not to)
-7. **Cancellation**
-   - Cooperative cancellation
-   - Checking for `Task.isCancelled`
+4. **`Task`**  
+   - Running async work in a new context  
+   - Main actor vs background threads  
+   - Demo: Main vs detached task execution  
+
+5. **`TaskGroup`**  
+   - Running multiple async tasks in parallel  
+   - Collecting and combining results  
+   - Demo: Parallel image fetch  
+
+6. **Detached Tasks**  
+   - When to use (and when not to)  
+   - Demo: Detached background logger example  
+
+7. **Cancellation**  
+   - Cooperative cancellation  
+   - Checking for `Task.isCancelled` and `Task.checkCancellation()`  
+   - Demo: Evolved network call with user and lifecycle cancellation  
 
 ---
 
 ### **Advanced**
-8. **Actors**
-   - Protecting mutable state
-   - `nonisolated` functions
-9. **Async Sequences**
-   - `AsyncSequence` & `AsyncStream`
-   - Consuming with `for await`
-10. **Mixing with Combine**
-    - Bridging async code with publishers
-11. **Performance & Pitfalls**
-    - Avoiding priority inversions
-    - Understanding structured concurrency costs
+8. **Actors**  
+   - Protecting mutable state with isolation  
+   - Using `nonisolated` functions  
+   - Demo: Counter actor vs race condition  
+
+9. **Async Sequences**  
+   - `AsyncSequence` & `AsyncStream`  
+   - Consuming with `for await`  
+   - Demo: Timer ticks, streaming API simulation  
+
+10. **Mixing with Combine**  
+    - Bridging async code with publishers  
+    - Demo: Async sequence → Combine publisher chart  
+
+11. **Performance & Pitfalls**  
+    - Avoiding priority inversions  
+    - Understanding structured concurrency costs  
+    - Demo: Compare naive parallel load vs tuned with priority management  
+
 
 ---
 
