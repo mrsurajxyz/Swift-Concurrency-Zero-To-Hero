@@ -40,65 +40,75 @@ This repo is perfect for:
 ```
 SwiftConcurrencyTutorial/
 ├─ 01-Beginner/
-│ ├─ 1.1-WhatIsSwiftConcurrency.md
-│ ├─ 1.2-AsyncAwaitBasics/
-│ │ ├─ AsyncAwaitBasics.swift // Playground/demo code
-│ │ ├─ AsyncAwaitDemoViewModel.swift // @Observable VM for demo
-│ │ ├─ AsyncAwaitDemoView.swift // SwiftUI demo UI
-│ │ └─ Tests/
-│ ├─ 1.3-AsyncLet/
-│ │ ├─ AsyncLetDemo.swift
-│ │ ├─ AsyncLetDemoViewModel.swift
-│ │ ├─ AsyncLetDemoView.swift
-│ │ └─ Tests/
+│  ├─ 1.1-WhatIsSwiftConcurrency.md
+│  ├─ 1.2-AsyncAwaitBasics/
+│  │  ├─ 1.2-AsyncAwaitBasics.md
+│  │  ├─ AsyncAwaitBasics.swift
+│  │  ├─ AsyncAwaitDemoViewModel.swift
+│  │  ├─ AsyncAwaitDemoView.swift
+│  │  └─ Tests/
+│  ├─ 1.3-AsyncLet/
+│  │  ├─ 1.3-AsyncLet.md
+│  │  ├─ AsyncLetDemo.swift
+│  │  ├─ AsyncLetDemoViewModel.swift
+│  │  ├─ AsyncLetDemoView.swift
+│  │  └─ Tests/
 │
 ├─ 02-Intermediate/
-│ ├─ 2.1-Task/
-│ │ ├─ TaskDemo.swift
-│ │ ├─ TaskDemoViewModel.swift
-│ │ ├─ TaskDemoView.swift
-│ │ └─ Tests/
-│ ├─ 2.2-TaskGroup/
-│ │ ├─ TaskGroupDemo.swift
-│ │ ├─ TaskGroupDemoViewModel.swift
-│ │ ├─ TaskGroupDemoView.swift
-│ │ └─ Tests/
-│ ├─ 2.3-DetachedTasks/
-│ │ ├─ DetachedTasksDemo.swift
-│ │ ├─ DetachedTasksDemoViewModel.swift
-│ │ ├─ DetachedTasksDemoView.swift
-│ │ └─ Tests/
-│ ├─ 2.4-Cancellation/
-│ ├─ CancellationDemo.swift
-│ ├─ CancellationDemoViewModel.swift
-│ ├─ CancellationDemoView.swift
-│ └─ Tests/
+│  ├─ 2.1-Task/
+│  │  ├─ 2.1-Task.md
+│  │  ├─ TaskDemo.swift
+│  │  ├─ TaskDemoViewModel.swift
+│  │  ├─ TaskDemoView.swift
+│  │  └─ Tests/
+│  ├─ 2.2-TaskGroup/
+│  │  ├─ 2.2-TaskGroup.md
+│  │  ├─ TaskGroupDemo.swift
+│  │  ├─ TaskGroupDemoViewModel.swift
+│  │  ├─ TaskGroupDemoView.swift
+│  │  └─ Tests/
+│  ├─ 2.3-DetachedTasks/
+│  │  ├─ 2.3-DetachedTasks.md
+│  │  ├─ DetachedTasksDemo.swift
+│  │  ├─ DetachedTasksDemoViewModel.swift
+│  │  ├─ DetachedTasksDemoView.swift
+│  │  └─ Tests/
+│  ├─ 2.4-Cancellation/
+│  │  ├─ 2.4-Cancellation.md
+│  │  ├─ CancellationDemo.swift
+│  │  ├─ CancellationDemoViewModel.swift
+│  │  ├─ CancellationDemoView.swift
+│  │  └─ Tests/
 │
 ├─ 03-Advanced/
-│ ├─ 3.1-Actors/
-│ │ ├─ ActorsDemo.swift
-│ │ ├─ ActorsDemoViewModel.swift
-│ │ ├─ ActorsDemoView.swift
-│ │ └─ Tests/
-│ ├─ 3.2-AsyncSequences/
-│ │ ├─ AsyncSequencesDemo.swift
-│ │ ├─ AsyncSequencesDemoViewModel.swift
-│ │ ├─ AsyncSequencesDemoView.swift
-│ │ └─ Tests/
-│ ├─ 3.3-MixingWithCombine/
-│ │ ├─ MixingWithCombineDemo.swift
-│ │ ├─ MixingWithCombineDemoViewModel.swift
-│ │ ├─ MixingWithCombineDemoView.swift
-│ │ └─ Tests/
-│ ├─ 3.4-PerformanceAndPitfalls/
-│ ├─ PerformanceDemo.swift
-│ ├─ PerformanceDemoViewModel.swift
-│ ├─ PerformanceDemoView.swift
-│ └─ Tests/
+│  ├─ 3.1-Actors/
+│  │  ├─ 3.1-Actors.md
+│  │  ├─ ActorsDemo.swift
+│  │  ├─ ActorsDemoViewModel.swift
+│  │  ├─ ActorsDemoView.swift
+│  │  └─ Tests/
+│  ├─ 3.2-AsyncSequences/
+│  │  ├─ 3.2-AsyncSequences.md
+│  │  ├─ AsyncSequencesDemo.swift
+│  │  ├─ AsyncSequencesDemoViewModel.swift
+│  │  ├─ AsyncSequencesDemoView.swift
+│  │  └─ Tests/
+│  ├─ 3.3-MixingWithCombine/
+│  │  ├─ 3.3-MixingWithCombine.md
+│  │  ├─ MixingWithCombineDemo.swift
+│  │  ├─ MixingWithCombineDemoViewModel.swift
+│  │  ├─ MixingWithCombineDemoView.swift
+│  │  └─ Tests/
+│  ├─ 3.4-PerformanceAndPitfalls/
+│  │  ├─ 3.4-PerformanceAndPitfalls.md
+│  │  ├─ PerformanceDemo.swift
+│  │  ├─ PerformanceDemoViewModel.swift
+│  │  ├─ PerformanceDemoView.swift
+│  │  └─ Tests/
 │
 └─ Shared/
-├─ MockData.swift
-└─ Utilities.swift
+   ├─ MockData.swift
+   └─ Utilities.swift
 ```
 
 ---
