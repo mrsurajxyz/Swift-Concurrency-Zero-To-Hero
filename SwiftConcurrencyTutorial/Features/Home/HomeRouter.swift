@@ -35,6 +35,8 @@ func destinationView(for dest: TopicDestination) -> some View {
         AsyncAwaitDemoView()
     case .asyncLet:
         AsyncLetDemoView()
+    case .task:
+        TaskDemoView()
     default:
         ComingSoonView(title: "Coming soon")
     }

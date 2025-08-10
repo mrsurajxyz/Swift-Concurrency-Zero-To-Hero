@@ -27,6 +27,10 @@
 		FB6D5D402E48014A00DE8A87 /* AsyncLetDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6D5D3E2E48008E00DE8A87 /* AsyncLetDemoView.swift */; };
 		FB6D5D412E48015600DE8A87 /* AsyncLetDemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6D5D342E47F9FD00DE8A87 /* AsyncLetDemoViewModel.swift */; };
 		FB6D5D422E48021100DE8A87 /* Duration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6D5D3A2E47FED400DE8A87 /* Duration+Extensions.swift */; };
+		FB6D5D462E4947CE00DE8A87 /* 2.1-Task.md in Resources */ = {isa = PBXBuildFile; fileRef = FB6D5D452E4947CE00DE8A87 /* 2.1-Task.md */; };
+		FB6D5D482E49496B00DE8A87 /* TaskDemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6D5D472E49496B00DE8A87 /* TaskDemoViewModel.swift */; };
+		FB6D5D4A2E4949D800DE8A87 /* TaskDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6D5D492E4949D800DE8A87 /* TaskDemoView.swift */; };
+		FB6D5D4E2E495AC900DE8A87 /* TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6D5D4C2E495AB300DE8A87 /* TaskTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		FB6D5D372E47FE5C00DE8A87 /* AsyncLetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLetTests.swift; sourceTree = "<group>"; };
 		FB6D5D3A2E47FED400DE8A87 /* Duration+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duration+Extensions.swift"; sourceTree = "<group>"; };
 		FB6D5D3E2E48008E00DE8A87 /* AsyncLetDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLetDemoView.swift; sourceTree = "<group>"; };
+		FB6D5D452E4947CE00DE8A87 /* 2.1-Task.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "2.1-Task.md"; sourceTree = "<group>"; };
+		FB6D5D472E49496B00DE8A87 /* TaskDemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDemoViewModel.swift; sourceTree = "<group>"; };
+		FB6D5D492E4949D800DE8A87 /* TaskDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDemoView.swift; sourceTree = "<group>"; };
+		FB6D5D4C2E495AB300DE8A87 /* TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,7 @@
 			children = (
 				FB6D5D002E47CE2400DE8A87 /* App */,
 				FB6D5D132E47ED8300DE8A87 /* 01-Beginner */,
+				FB6D5D432E4947B000DE8A87 /* 02-Intermediate */,
 				FB6D5CD52E47CCD500DE8A87 /* Features */,
 				FB6D5D392E47FEC300DE8A87 /* Extensions */,
 				FB6D5D032E47CF4900DE8A87 /* Utilities */,
@@ -252,6 +261,33 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		FB6D5D432E4947B000DE8A87 /* 02-Intermediate */ = {
+			isa = PBXGroup;
+			children = (
+				FB6D5D442E4947C100DE8A87 /* 2.1-Task */,
+			);
+			path = "02-Intermediate";
+			sourceTree = "<group>";
+		};
+		FB6D5D442E4947C100DE8A87 /* 2.1-Task */ = {
+			isa = PBXGroup;
+			children = (
+				FB6D5D452E4947CE00DE8A87 /* 2.1-Task.md */,
+				FB6D5D472E49496B00DE8A87 /* TaskDemoViewModel.swift */,
+				FB6D5D492E4949D800DE8A87 /* TaskDemoView.swift */,
+				FB6D5D4B2E495AAB00DE8A87 /* Tests */,
+			);
+			path = "2.1-Task";
+			sourceTree = "<group>";
+		};
+		FB6D5D4B2E495AAB00DE8A87 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FB6D5D4C2E495AB300DE8A87 /* TaskTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -367,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB6D5D462E4947CE00DE8A87 /* 2.1-Task.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +423,9 @@
 			files = (
 				FB6D5D282E47F61D00DE8A87 /* HomeModels.swift in Sources */,
 				FB6D5D2B2E47F63200DE8A87 /* AsyncAwaitDemoViewModel.swift in Sources */,
+				FB6D5D482E49496B00DE8A87 /* TaskDemoViewModel.swift in Sources */,
 				FB6D5D2A2E47F62E00DE8A87 /* NetworkClient.swift in Sources */,
+				FB6D5D4A2E4949D800DE8A87 /* TaskDemoView.swift in Sources */,
 				FB6D5D422E48021100DE8A87 /* Duration+Extensions.swift in Sources */,
 				FB6D5D412E48015600DE8A87 /* AsyncLetDemoViewModel.swift in Sources */,
 				FB6D5CD72E47CCD500DE8A87 /* SwiftConcurrencyTutorialApp.swift in Sources */,
@@ -402,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6D5CE82E47CCD600DE8A87 /* SwiftConcurrencyTutorialTests.swift in Sources */,
+				FB6D5D4E2E495AC900DE8A87 /* TaskTests.swift in Sources */,
 				FB6D5D382E47FE5C00DE8A87 /* AsyncLetTests.swift in Sources */,
 				FB6D5D172E47EDE800DE8A87 /* NetworkClient.swift in Sources */,
 				FB6D5D0F2E47D6EF00DE8A87 /* AsyncAwaitTests.swift in Sources */,
