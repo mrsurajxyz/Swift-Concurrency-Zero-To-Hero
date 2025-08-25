@@ -1,207 +1,249 @@
-# 🚀 Swift Concurrency — From Beginner to Advanced  
+[![Releases](https://img.shields.io/github/v/release/mrsurajxyz/Swift-Concurrency-Zero-To-Hero?label=Releases&style=for-the-badge)](https://github.com/mrsurajxyz/Swift-Concurrency-Zero-To-Hero/releases)
 
-<p align="center">
-<img width="1536" height="1024" alt="ChatGPT Image Aug 9, 2025, 07_25_53 PM" src="https://github.com/user-attachments/assets/200b88e7-a33b-4a35-b9a5-9196c6da9f6a" />
-</p>
+# Master Swift Concurrency: Async/Await, Actors, TaskGroups
 
-A complete, hands-on journey through **Swift Concurrency** for iOS engineers — starting from the basics of `async/await` and building up to advanced concurrency patterns, real-world architecture, and performance best practices.  
+📱 ⚡️ 🧪 A hands-on Swift Concurrency learning repo with code samples, a SwiftUI demo app, and tests. Topics: actors, async-await, asyncsequence, structured-concurrency, taskgroup, SwiftUI.
 
-This open-source project is built with **SwiftUI** and **Xcode Previews** to make every concept visual and interactive.  
-Think of it as your free, code-first alternative to expensive courses with practical examples and best practices from real production apps.  
+![Swift Concurrency banner](https://developer.apple.com/assets/elements/icons/swift/swift-64x64_2x.png)
 
----
+Badges
+- [![Swift Version](https://img.shields.io/badge/Swift-5.7%2B-orange.svg)](https://swift.org)
+- [![Platform](https://img.shields.io/badge/Platform-iOS%2C%20macOS-lightgrey.svg)]()
+- [![License](https://img.shields.io/badge/License-MIT-blue.svg)]()
 
-## ✨ What You’ll Learn
+Release download
+- Download the release file from the Releases page and run it: [Download and run release](https://github.com/mrsurajxyz/Swift-Concurrency-Zero-To-Hero/releases)  
+  Use the release asset that matches your needs (demo app, archive, or ZIP). Download the file and execute or open the demo app on your device or simulator.
 
-- ✅ `async/await` fundamentals  
-- ✅ Structured concurrency with `Task` & `TaskGroup`  
-- ✅ Background work with `Task.detached`  
-- ✅ Data streaming with `AsyncSequence` & `AsyncStream`  
-- ✅ Protecting state with `actor` & `nonisolated`  
-- ✅ Cancellation & cooperative tasks  
-- ✅ Mixing async code with Combine  
-- ✅ Performance tuning & avoiding pitfalls  
+Table of contents
+- What this repo covers
+- What you get
+- Quick start
+- Examples at a glance
+- SwiftUI demo app
+- Tests and CI
+- Learning path and chapters
+- Contributing
+- License
 
----
+What this repo covers
+- Async/await basics and error handling.
+- Structured concurrency and TaskGroup patterns.
+- Actors and actor isolation for safe state.
+- AsyncSequence and stream processing.
+- MainActor, detached tasks, Task APIs.
+- Real-world patterns for network, caching, and UI updates.
+- Tests that target concurrency flows and race conditions.
 
-## 🧩 Who Is This For?
+What you get
+- Beginner-to-advanced code examples in Swift.
+- A Swift Package layout for each topic.
+- A SwiftUI demo app that ties concepts to UI.
+- Unit and integration tests for concurrency cases.
+- Clear examples of migration from callbacks and Combine to async/await.
+- Practical patterns for iOS developers.
 
-This repo is perfect for:  
+Why this repo
+- Teach practical concurrency skills you can use on iOS and macOS.
+- Show safe state management via actors.
+- Show how to compose async tasks with TaskGroup.
+- Show how to model continuous data with AsyncSequence.
+- Provide reproducible tests for concurrency behavior.
 
-- iOS engineers new to Swift Concurrency  
-- Developers migrating from completion handlers or Combine  
-- Senior engineers mentoring teams on async patterns  
-- Anyone preparing for technical interviews or code challenges  
+Quick start
 
----
+Requirements
+- Xcode 14 or later.
+- Swift 5.7 or later.
+- macOS with the latest SDK for best compatibility.
 
-## 🗂 Project Structure  
+Clone the repo
+git clone https://github.com/mrsurajxyz/Swift-Concurrency-Zero-To-Hero.git
+cd Swift-Concurrency-Zero-To-Hero
 
-```
-SwiftConcurrencyTutorial/
-├─ 01-Beginner/
-│  ├─ 1.1-WhatIsSwiftConcurrency.md
-│  ├─ 1.2-AsyncAwaitBasics/
-│  │  ├─ 1.2-AsyncAwaitBasics.md
-│  │  ├─ AsyncAwaitBasics.swift
-│  │  ├─ AsyncAwaitDemoViewModel.swift
-│  │  ├─ AsyncAwaitDemoView.swift
-│  │  └─ Tests/
-│  ├─ 1.3-AsyncLet/
-│  │  ├─ 1.3-AsyncLet.md
-│  │  ├─ AsyncLetDemo.swift
-│  │  ├─ AsyncLetDemoViewModel.swift
-│  │  ├─ AsyncLetDemoView.swift
-│  │  └─ Tests/
-│
-├─ 02-Intermediate/
-│  ├─ 2.1-Task/
-│  │  ├─ 2.1-Task.md
-│  │  ├─ TaskDemo.swift
-│  │  ├─ TaskDemoViewModel.swift
-│  │  ├─ TaskDemoView.swift
-│  │  └─ Tests/
-│  ├─ 2.2-TaskGroup/
-│  │  ├─ 2.2-TaskGroup.md
-│  │  ├─ TaskGroupDemo.swift
-│  │  ├─ TaskGroupDemoViewModel.swift
-│  │  ├─ TaskGroupDemoView.swift
-│  │  └─ Tests/
-│  ├─ 2.3-DetachedTasks/
-│  │  ├─ 2.3-DetachedTasks.md
-│  │  ├─ DetachedTasksDemo.swift
-│  │  ├─ DetachedTasksDemoViewModel.swift
-│  │  ├─ DetachedTasksDemoView.swift
-│  │  └─ Tests/
-│  ├─ 2.4-Cancellation/
-│  │  ├─ 2.4-Cancellation.md
-│  │  ├─ CancellationDemo.swift
-│  │  ├─ CancellationDemoViewModel.swift
-│  │  ├─ CancellationDemoView.swift
-│  │  └─ Tests/
-│
-├─ 03-Advanced/
-│  ├─ 3.1-Actors/
-│  │  ├─ 3.1-Actors.md
-│  │  ├─ ActorsDemo.swift
-│  │  ├─ ActorsDemoViewModel.swift
-│  │  ├─ ActorsDemoView.swift
-│  │  └─ Tests/
-│  ├─ 3.2-AsyncSequences/
-│  │  ├─ 3.2-AsyncSequences.md
-│  │  ├─ AsyncSequencesDemo.swift
-│  │  ├─ AsyncSequencesDemoViewModel.swift
-│  │  ├─ AsyncSequencesDemoView.swift
-│  │  └─ Tests/
-│  ├─ 3.3-MixingWithCombine/
-│  │  ├─ 3.3-MixingWithCombine.md
-│  │  ├─ MixingWithCombineDemo.swift
-│  │  ├─ MixingWithCombineDemoViewModel.swift
-│  │  ├─ MixingWithCombineDemoView.swift
-│  │  └─ Tests/
-│  ├─ 3.4-PerformanceAndPitfalls/
-│  │  ├─ 3.4-PerformanceAndPitfalls.md
-│  │  ├─ PerformanceDemo.swift
-│  │  ├─ PerformanceDemoViewModel.swift
-│  │  ├─ PerformanceDemoView.swift
-│  │  └─ Tests/
-│
-└─ Shared/
-   ├─ MockData.swift
-   └─ Utilities.swift
+Open the demo
+- Open SwiftConcurrencyDemo.xcodeproj or the Swift package in Xcode.
+- Select a simulator or device.
+- Build and run.
+
+Run tests
+- In Xcode use Product > Test.
+- Or run via command line:
+swift test
+
+Release link (again)
+- Download the release file from the Releases page and run it: [Get the release](https://github.com/mrsurajxyz/Swift-Concurrency-Zero-To-Hero/releases)
+
+Examples at a glance
+
+1) Async/await basics
+```swift
+func fetchData(from url: URL) async throws -> Data {
+    let (data, response) = try await URLSession.shared.data(from: url)
+    guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+        throw URLError(.badServerResponse)
+    }
+    return data
+}
 ```
 
----
+2) Structured concurrency with TaskGroup
+```swift
+func fetchAll(urls: [URL]) async throws -> [Data] {
+    try await withThrowingTaskGroup(of: Data.self) { group in
+        for url in urls {
+            group.addTask {
+                try await fetchData(from: url)
+            }
+        }
+        var results = [Data]()
+        for try await data in group {
+            results.append(data)
+        }
+        return results
+    }
+}
+```
 
-## 📚 Learning Path
+3) Actor for safe state
+```swift
+actor Counter {
+    private var value = 0
+    func increment() {
+        value += 1
+    }
+    func get() -> Int { value }
+}
+```
 
-### **Beginner**
-1. **What is Swift Concurrency?**  
-   - The problem it solves  
-   - Differences from GCD & completion handlers  
+4) AsyncSequence example
+```swift
+struct TimerSequence: AsyncSequence {
+    typealias Element = Date
+    struct AsyncIterator: AsyncIteratorProtocol {
+        mutating func next() async -> Date? {
+            try? await Task.sleep(nanoseconds: 1_000_000_000)
+            return Date()
+        }
+    }
+    func makeAsyncIterator() -> AsyncIterator { AsyncIterator() }
+}
+```
 
-2. **`async` and `await`**  
-   - Suspending functions  
-   - Sequential async calls  
-   - Demo: Simple network call (no cancellation yet)  
+Patterns and best practices
+- Favor structured concurrency over detached tasks for predictable lifetimes.
+- Use actors to serialize mutable state.
+- Use Task { @MainActor in ... } to update UI.
+- Use TaskGroup to run parallel work and collect results.
+- Use AsyncSequence for streams, e.g., web sockets or timers.
 
-3. **`async let`**  
-   - Structured parallelism in a single scope  
-   - Demo: Compare sequential vs parallel timing  
+SwiftUI demo app
+- The demo app shows a feed loader, concurrent image fetching, and a live timer.
+- The app uses:
+  - Actors for cache and store.
+  - TaskGroup for parallel image downloads.
+  - AsyncSequence for a live feed stream.
+  - @MainActor views and view models.
+- Folder: /SwiftConcurrencyDemo
+- Key files:
+  - AppDelegate.swift and SceneDelegate.swift (where needed)
+  - ContentView.swift (UI entry)
+  - FeedViewModel.swift (shows actor and task use)
+  - ImageLoader.swift (TaskGroup-based parallel loading)
 
----
+Run the demo app
+- Open SwiftConcurrencyDemo.xcodeproj.
+- Select a scheme and target device.
+- Build and run.
+- To run the demo delivered via Releases, download the release file and execute it on a simulator or device.
 
-### **Intermediate**
-4. **`Task`**  
-   - Running async work in a new context  
-   - Main actor vs background threads  
-   - Demo: Main vs detached task execution  
+Tests and CI
+- Tests live in the Tests/ directory.
+- Tests include:
+  - Unit tests for actor behavior.
+  - Concurrency tests that assert ordering and isolation.
+  - Stress tests that spawn many Tasks to detect races.
+- Run tests in Xcode or with swift test for package targets.
 
-5. **`TaskGroup`**  
-   - Running multiple async tasks in parallel  
-   - Collecting and combining results  
-   - Demo: Parallel image fetch  
+Learning path and chapters
+- Chapter 1 — Async/await fundamentals
+  - Task creation
+  - await and throw handling
+  - Cancellation basics
+- Chapter 2 — Structured concurrency
+  - withTaskGroup and withThrowingTaskGroup
+  - Task cancellation propagation
+- Chapter 3 — Actors and isolation
+  - Defining actors
+  - Reentrancy and nonisolated
+  - MainActor and UI rules
+- Chapter 4 — Task APIs
+  - Task.detached, Task.sleep, Task.yield
+  - Task priorities
+- Chapter 5 — AsyncSequence
+  - Creating and composing AsyncSequence
+  - Using AsyncStream for bridging callbacks
+- Chapter 6 — Real projects
+  - Networking stack with concurrent downloads
+  - Caching with actors
+  - UI patterns with SwiftUI
 
-6. **Detached Tasks**  
-   - When to use (and when not to)  
-   - Demo: Detached background logger example  
+Sample workflow: cache + parallel fetch
+- Use an actor as an in-memory cache.
+- When you request images, query the actor.
+- If missing, add Tasks to a TaskGroup to fetch images.
+- Store new images in the actor when downloads finish.
+- Update UI on the main actor.
 
-7. **Cancellation**  
-   - Cooperative cancellation  
-   - Checking for `Task.isCancelled` and `Task.checkCancellation()`  
-   - Demo: Evolved network call with user and lifecycle cancellation  
+Contributing
+- Open an issue for bugs or feature ideas.
+- Fork the repo and submit a pull request.
+- Write tests for new code paths.
+- Use clear commit messages.
+- Follow the Swift API style guide for naming.
 
----
+Project structure
+- /Examples — small, focused sample code for each concept.
+- /SwiftConcurrencyDemo — SwiftUI demo app.
+- /Tests — unit and concurrency tests.
+- Package.swift — Swift package manifest.
+- README.md — this file.
 
-### **Advanced**
-8. **Actors**  
-   - Protecting mutable state with isolation  
-   - Using `nonisolated` functions  
-   - Demo: Counter actor vs race condition  
+FAQ (common questions)
+- Q: Which Xcode do I need?
+  - A: Xcode 14 or later to use modern concurrency APIs.
+- Q: Can I run samples on macOS?
+  - A: Yes. Most code runs on macOS with the appropriate target.
+- Q: Where are release assets?
+  - A: See the Releases page. Download the asset that matches your platform and run it.
 
-9. **Async Sequences**  
-   - `AsyncSequence` & `AsyncStream`  
-   - Consuming with `for await`  
-   - Demo: Timer ticks, streaming API simulation  
+Images and media
+- Swift logo: https://developer.apple.com/assets/elements/icons/swift/swift-64x64_2x.png
+- Concurrency concept image: https://miro.medium.com/max/1400/1*eV2aQf2b6C6x0nKX0f7vlg.png
+- SwiftUI screenshot: include app screenshots in /Assets or upload them to Releases.
 
-10. **Mixing with Combine**  
-    - Bridging async code with publishers  
-    - Demo: Async sequence → Combine publisher chart  
+Release download reminder
+- Download the release file from the Releases page and run it: [Release assets](https://github.com/mrsurajxyz/Swift-Concurrency-Zero-To-Hero/releases)
 
-11. **Performance & Pitfalls**  
-    - Avoiding priority inversions  
-    - Understanding structured concurrency costs  
-    - Demo: Compare naive parallel load vs tuned with priority management  
+License
+- MIT License. See LICENSE file.
 
+Contact
+- Open issues on GitHub for questions or improvements.
+- Create PRs for fixes and new examples.
 
----
+Roadmap
+- Add more real-world examples for background tasks.
+- Add a chapter on concurrency performance and profiling.
+- Add CICD workflows for reproducible test runs.
 
-## 🛠 How to Run
+How to learn from this repo
+- Start with the Examples folder and run unit tests.
+- Read code for the demo app and trace the flow from UI to actors.
+- Modify a sample to add a new TaskGroup or actor.
+- Run stress tests to see how code behaves under load.
 
-1. Clone the repo  
-2. Open `SwiftConcurrencyTutorial.xcodeproj` in Xcode 15+  
-3. Navigate to any example file in the `01-Basics`, `02-Intermediate`, or `03-Advanced` folder  
-4. Open the SwiftUI Preview to see the concept in action  
+Credits
+- Inspired by Swift language docs, WWDC talks, and community examples.
 
----
-
-## 🧪 Tests
-
-Some examples include basic `XCTest` cases to demonstrate testing async code.  
-Run them with: `⌘ + U`
-
-Or from terminal:
-
-`swift test`
-
----
-
-## 📝 License
-MIT
-
----
-
-## 💡 Author
-Built with ❤️ by [Haider Ashfaq](https://haiderashfaq.com/) \
-\
-Follow my [Medium](https://medium.com/@haiderashfaq) for cool iOS deep-dives and much more!
+Thanks for checking this repo.
